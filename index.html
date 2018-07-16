@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>水質分析</title>
+        <? include("sql/sql.php");?>
+		<link rel="stylesheet" href="css/css.css">
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/js.js"></script>
+	</head>
+	<body>
+    	<div style="width:100%; height:640px;">
+            <div style="width:90%; height:60px; margin:20px 5% 0% 5%; background-color:rgba(204,204,204,1); border-bottom:rgba(255,255,255,1) 2px solid; border-radius:5px 5px 0px 0px;">
+                <ul>
+                    <li id="li1" class="top_list" style="background-color:rgba(255,255,255,1);"><span>水質圖</span></li>
+                    <li id="li2" class="top_list"><span>詳細資料</span></li>
+                    <li id="li3" class="top_list"><span>資料分析</span></li>
+                </ul>
+            </div>
+            <div style="width:90%; height:570px; margin:0% 5% 0% 5%; background-color:rgba(255,255,255,0.9); border-radius:0px 0px 5px 5px; overflow:scroll;" align="center">
+                <span class="chart_content">
+                    <iframe width="450" height="260" style="border: 2px solid #cccccc; margin:120px 5%;" src="https://thingspeak.com/channels/392387/charts/1?bgcolor=%23bbbbbb&color=%23ffffff&dynamic=true&results=60&title=PH&type=line"></iframe>
+                </span>
+                <span class="chart_content">
+                    <iframe width="450" height="260" style="border: 2px solid #cccccc; margin:120px 5%;" src="https://thingspeak.com/channels/392387/charts/2?bgcolor=%23bbbbbb&color=%23ffffff&dynamic=true&results=60&title=Turbidity&type=line"></iframe>
+                </span>
+                <span id="detail" class="detail_content" style="display:none;"></span>
+                <span id="analyze" class="analyze_content" style="display:none;"></span>
+            </div>
+        </div>
+	</body>
+</html>
